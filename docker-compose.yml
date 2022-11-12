@@ -1,0 +1,25 @@
+services:
+  frontend:
+    build: .
+    init: true
+    ports:
+      - 5174:5174
+      - 4174:4174
+    tty: true
+    volumes:
+      - frontend:/home/node/vue-contract
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.27.1-focal
+    ipc: host
+    init: true
+    user: pwuser
+    security_opt:
+      - seccomp=seccomp_profile.json
+    depends_on:
+      - frontend
+    working_dir: /frontend
+    volumes:
+      - frontend:/frontend
+    command: sh -c "npm run build && npm run test:e2e"
+volumes:
+  frontend:
