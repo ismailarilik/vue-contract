@@ -1,6 +1,6 @@
 # vue-contract
 
-This template should help get you started developing with Vue 3 in Vite.
+> A Vue.js frontend for a smart contract
 
 ## Recommended IDE Setup
 
