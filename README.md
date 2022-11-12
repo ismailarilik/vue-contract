@@ -21,6 +21,36 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
+## Requirements
+
+1. Fetch this repository into your local (You can clone with [Git](https://git-scm.com/downloads) or just download files into a directory.)
+1. [Install Docker](https://www.docker.com/products/docker-desktop/)
+1. [Install VS Code](https://code.visualstudio.com/download)
+1. [Install "Dev Containers" VS Code extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+1. Open a terminal in the project path
+
+## Services
+
+### Frontend
+
+At first, you should [generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), [add it to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) and copy the private key into the project directory.
+
+After then, you can start frontend container:
+
+```sh
+docker compose up frontend
+```
+
+You can use [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) VS Code extension to open a VS Code instance in this container.
+
+### Playwright
+
+Run end-to-end tests with Playwright:
+
+```sh
+docker compose up playwright
+```
+
 ## Project Setup
 
 ```sh
