@@ -1,6 +1,8 @@
 services:
   frontend:
     build: .
+    extra_hosts:
+      - host.docker.internal:host-gateway
     init: true
     ports:
       - 5174:5174
