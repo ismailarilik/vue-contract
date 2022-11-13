@@ -10,6 +10,7 @@ services:
     tty: true
     volumes:
       - frontend:/home/node/vue-contract
+      - .:/home/node/vue-contract
   playwright:
     image: mcr.microsoft.com/playwright:v1.27.1-focal
     ipc: host
